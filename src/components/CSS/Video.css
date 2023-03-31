@@ -1,0 +1,173 @@
+* + * {
+    margin-top: 1.5em;
+  }
+
+  h1{
+    text-align: center;
+  }
+  
+  body {
+    background-color: rgba(255, 140, 0, 0.08);
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 1.7;
+  }
+  
+  article {
+    background-color: #fff;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    padding: 0.5em 1em;
+    max-width: 640px;
+  }
+  
+  .video-item {
+    overflow: hidden;
+  }
+  
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
+  
+  .video-item iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
+  
+  .video-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    height: 270px;
+    width: 480px;
+  }
+  
+  @supports (display: grid) {
+  
+    .video-grid {
+      display: grid;
+      margin: 0 -2em;
+    }
+    
+    .video-item {
+      margin-top: 0;
+    }
+    
+    .video-item iframe {
+      border: 0.125rem solid transparent;
+    }
+  }
+
+
+
+  /* Emoticons */
+
+  .react {
+    display: block;
+    margin-top: 81px;
+    margin-left: 2em;
+  }
+.react-me {
+font-family: Helvetica;
+cursor: pointer;
+display: block;
+position: relative;
+}
+.react-me .inner {
+position: absolute;
+bottom: 100%;
+padding-bottom: 15px;
+}
+.react-me:hover .react-box {
+display: block;
+}
+.react-box {
+    background-color: black;
+list-style-type: none;
+margin: 0;
+/* display: none; */
+margin-bottom: -15px;
+padding: 0 5px;
+border-radius: 150px;
+background: #fff;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.react-box ul {
+margin: 0;
+padding: 0;
+}
+.react-box li {
+display: inline-block;
+width: 48px;
+height: 48px;
+transform: scale(0.8) translateY(0);
+background: url("https://static.xx.fbcdn.net/rsrc.php/v2/yh/r/sqhTN9lgaYm.png")
+    no-repeat;
+background-size: cover;
+transition: transform 200ms ease;
+position: relative;
+}
+.react-box li.like {
+background-position: 0 -144px;
+}
+.react-box li.love {
+background-position: 0 -192px;
+}
+.react-box li.haha {
+background-position: 0 -96px;
+}
+.react-box li.wow {
+background-position: 0 -288px;
+}
+.react-box li.sad {
+background-position: 0 -240px;
+}
+.react-box li.angry {
+background-position: 0 0;
+}
+.react-box li:before {
+content: attr(data-hover);
+position: absolute;
+bottom: 120%;
+left: 50%;
+transform: translateX(-50%);
+color: #fff;
+padding: 0 8px;
+border-radius: 20px;
+font-family: Helvetica, Verdana, Arial;
+font-weight: bold;
+line-height: 20px;
+font-size: 12px;
+background: rgba(0, 0, 0, 0.76);
+display: none;
+}
+.react-box li:hover {
+transform: scale(1) translateY(-5px);
+transition: transform 200ms ease;
+}
+.react-box li:hover:before {
+display: inline-block;
+}
+
+/* Responsive */
+@media screen and (max-width : 800px){
+    .container{
+        width: 50vh;
+    }
+}
+
+/* Student Video Upload */
+
+.studentVideo{
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+    background-color: burlywood;
+    border: 2px solid black;
+}

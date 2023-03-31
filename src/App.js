@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
+import DataState from './context/DataState';
+import Alert from './components/Alert';
+import { useState } from 'react';
 
 function App() {
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type, reaction) =>{
+      setAlert({
+        msg : message,
+        type : type,
+        reaction : reaction
+      })
+
+     setTimeout(() => {
+        setAlert(null);
+     }, 1000);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <DataState>
+     <Alert alert={alert}/>
+      <Home showAlert={showAlert}/>
+     </DataState>
+      
+    </>
   );
 }
 
