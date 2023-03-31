@@ -1,5 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+# I created a Grid Layout Webpage which includes a Guitar Instructional Video and Reactions like Facebook are a add on's in it for users. The Webpage also has a Contact Form for the Guitar Lessons for users who want to join the Classes can contact via form. The Form is built using React and the Database is connected to MongoDB.
 # dependencies
 node_modules
 /.pnp
