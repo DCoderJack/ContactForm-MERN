@@ -145,7 +145,7 @@ React App in Chrome on localhost:3000 with backend on localhost:5000
   
   ![image](https://user-images.githubusercontent.com/112248339/229273735-ff622fff-f257-45de-b6a4-1a74096a7645.png)
   
-  # Database after successfull form submition
+  # Database after successfull form submission
   
   ![image](https://user-images.githubusercontent.com/112248339/229274107-8342ec88-c774-4329-ad75-23c5b1845e39.png)
   
