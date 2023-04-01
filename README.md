@@ -1,5 +1,5 @@
 # Contact Form with Guitar Instructional video for students / learners with reactions like facebook
-# We have used React - Frontend with Context, MongoDB, Express Js, Node Js for Backend
+# React - Frontend with Context, MongoDB, Express Js, Node Js for Backend
 
 # Available Scripts / Commands to run the React FrontEnd & BackEnd
 
@@ -106,7 +106,7 @@ Steps :
    
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Images :
+# Images Representing the Setup / How to Run :
 
 
 
