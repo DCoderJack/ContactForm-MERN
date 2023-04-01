@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Contact Form with Guitar Instructional video for students / learners with reactions like facebook
+# We have used React - Frontend with Context, MongoDB, Express Js, Node Js for Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Available Scripts / Commands to run the React FrontEnd & BackEnd
 
-## Available Scripts
+npm run both
 
-In the project directory, you can run:
+  or
+  
+cd form
+npm run start
 
-### `npm start`
+cd backend 
+npx nodemon
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Getting started with React Frontend - open your folder in Terminal
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npx create-react-app form
 
-### `npm test`
+# Create a Backend Folder inside the React App Folder - We have created the backend folder inside it only for development purpose and easy development
+# Install packages in Backend Folder (cd backend)
+    1. npm init 
+    2. npm install express
+    3. npm install mongoose
+    4. npm install --save-dev nodemon
+    5. npm install cors
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Frontend - install npm packages (cd form)
+    
+    1. npm i -D concurrently
 
-### `npm run build`
+# Include concurrently Script in scripts of package.json file of React App - Frontend to simultaneously run React App & Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    "both": "concurrently \"npm run start\" \"nodemon backend/index.js\""
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    To Run Coomand : npm run both
+    
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Backend Setup
 
-### `npm run eject`
+# We are using MongoDB, Express Js, Node Js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Steps : 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Create a database in MongoDB to obtain your mongoURI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Inside Backend folder create
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  i. db.js - use mongoose & mongoose.connect function to connect to your MongoDB Connection String & export the function connectToMongo
+  
+  ii. index.js - use express, import the exported function from db.js, run the function connectToMongo()
+  
+                 set the endpoints to hit the backend -
+                      app.use('/api/contactform', require('./routes/contactform'))
+                      
+                 listen the app using - app.listen
+                 
+  iii. models - Create models folder, inside it create Data.js file for defining Schema using mongoose
+               
+  iv. routes - Create routes folder, inside it create contactform.js file for defining endpoint '/contact' using express, router, import Data from '../models/Data',                  export the router
+               
+               destructure the userName, email, age , etc schemas from the req.body
+               
+               create new Data to save the user data into Database collection userdata
+               
+               data.save() - command to save data in MongoDB Collection
+               
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+               
+# Frontend Setup
 
-## Learn More
+# We are using React with CSS Grid Layout
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Include Bootstrap CSS and JavaScript in public/index.html
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Create components folder in src folder
+    Components folder structure -
+      i. CSS Folder includes css for Instructional Video Grid, Contact Form
+     ii. Home - It renders Video, Form components in it
+    iii. Alert - To pop up alerts
+     iV. Video - It has a CSS Grid Layout
+      V. Form - Contact Form
+       
+3. Create context folder inside React App
+      i. create contect - 'const dataContext = createContext()', export it by default
+      ii. DataState.js -  import dataContext
+                          create a function DataState
+                          create useState hook to set the data from the contact form inputed by user by fectching the endpoint
+                          
+                              fetch(`${host}/api/contactform/contact`)
+                              
+                          Store the response in JSON.stringify format
+                          Set the data in the state by concating it
+                          
+                          return ( <DataContext.Provider value = {{datas, addData}}>
+                                          {props.children}
+                                      </DataContext.Provider>
+                                 )
+   
+4. Configuring the Contact Form using the Context -
+    i. import the dataContext
+   ii. useState hook - to set data
+  iii. inside the form use onChange to set data which is entered in the contact form fiels
+   iv. inside the submit button create a handleAddData() function to add the entered data in the contact form by the user
+   
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Code Splitting
+Images :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
