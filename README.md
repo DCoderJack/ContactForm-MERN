@@ -74,6 +74,20 @@ Steps :
 
 1. Include Bootstrap CSS and JavaScript in public/index.html
 
+App.js inside src folder is the Main Components of the React App -
+
+    Inside App.js import & it's structure
+    
+       <DataState>
+          <Alert alert={alert}/>
+          <Home showAlert={showAlert}/>
+       </DataState> 
+      
+    Structure of Home by importing the below components
+    
+        <Video showAlert={props.showAlert}/>
+        <Form showAlert={props.showAlert}/>
+
 2. Create components folder in src folder
     Components folder structure -
       i. CSS Folder includes css for Instructional Video Grid, Contact Form
@@ -108,6 +122,7 @@ Steps :
 
 # Images Representing the Setup / How to Run :
 
+![image](https://user-images.githubusercontent.com/112248339/229273064-a4211129-0d35-4526-a022-9488f0297bdf.png)
 
 
 
