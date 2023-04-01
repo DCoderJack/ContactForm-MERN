@@ -147,20 +147,9 @@ React App in Chrome on localhost:3000 with backend on localhost:5000
   
   # Database after successfull form submition
   
-  ![image](https://user-images.githubusercontent.com/112248339/229273786-2685c277-c8c3-4691-855e-6b20d3258513.png)
+  ![image](https://user-images.githubusercontent.com/112248339/229274107-8342ec88-c774-4329-ad75-23c5b1845e39.png)
   
   ![image](https://user-images.githubusercontent.com/112248339/229273940-f70c2daf-45a1-43d4-8e17-6e7939650fd4.png)
 
 
 # Thank You!!!
-  
-  
-
-
-
-
-
-
-
-
-
